@@ -1,0 +1,24 @@
+{
+  "name": "offcanva_mike",
+  "version": "1.0.0",
+  "description": "A jQuery plugin for creating offcanvas menus in different directions.",
+  "main": "js/offcanva_mike.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeleganux1998/offcanva_mike.git"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "offcanva"
+  ],
+  "author": "Jose Miguel Rosas Jimenez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikeleganux1998/offcanva_mike/issues"
+  },
+  "homepage": "https://github.com/mikeleganux1998/offcanva_mike#readme"
+}

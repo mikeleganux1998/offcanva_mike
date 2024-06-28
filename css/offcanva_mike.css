@@ -1,129 +1,141 @@
-/* General body styles */
 body {
     font-family: Arial, sans-serif;
 }
 
-/* Main offcanvas container */
+/* Main container for the offcanvas */
 .offcanva_mike-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 1000;
+    position: fixed;            /* Fixed to the window */
+    top: 0;                     /* From the top */
+    left: 0;                    /* From the left */
+    width: 100%;                /* Full width */
+    height: 100%;               /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none;              /* Hidden by default */
+    z-index: 1000;              /* Z-index layer above other elements */
 }
 
-/* Base styles for offcanvas */
+/* Base styles for the offcanvas */
 .offcanva_mike {
-    position: fixed;
-    width: 450px;
-    height: 100%;
-    background-color: white;
-    transition: transform 0.3s ease-in-out;
-    z-index: 1001;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
+    position: fixed;            /* Fixed to the window */
+    width: 450px;               /* Base width of the offcanvas */
+    height: 100%;               /* Base height of the offcanvas */
+    background-color: antiquewhite;    /* White background */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    z-index: 1001;              /* Z-index layer above the container */
+    padding: 20px;              /* Inner padding */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+    overflow-y: auto;           /* Vertical scroll if content exceeds height */
 }
 
-/* Offcanvas content container */
+/* Content container for the offcanvas */
 .offcanva_mike-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: 100%;               /* Full height */
+    display: flex;              /* Flexbox layout to align elements */
+    flex-direction: column;     /* Column direction to stack vertically */
 }
 
-/* Additional styles if there's a title and text */
+/* Additional styles if there is a title and text */
 .offcanva_mike.with-text {
-    height: auto;
+    height: auto;               /* Height adjusted automatically if there is content */
 }
 
 /* Specific styles for each direction */
 
 /* Left */
 .offcanva_mike.left {
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
+    top: 0;                     /* From the top */
+    left: 0;                    /* From the left */
+    transform: translateX(-100%); /* Move out of view to the left */
 }
 
 .offcanva_mike.left.open {
-    transform: translateX(0);
+    transform: translateX(0);   /* Show by moving to the original position */
 }
 
 /* Right */
 .offcanva_mike.right {
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
+    top: 0;                     /* From the top */
+    right: 0;                   /* From the right */
+    transform: translateX(100%); /* Move out of view to the right */
 }
 
 .offcanva_mike.right.open {
-    transform: translateX(0);
+    transform: translateX(0);   /* Show by moving to the original position */
 }
 
 /* Top */
 .offcanva_mike.top {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 450px;
-    transform: translateY(-100%);
+    top: 0;                     /* From the top */
+    left: 0;                    /* From the left */
+    width: 100%;                /* Full width */
+    height: 450px;              /* Specific height for offcanvas at the top */
+    transform: translateY(-100%); /* Move out of view upwards */
 }
 
 .offcanva_mike.top.open {
-    transform: translateY(0);
+    transform: translateY(0);   /* Show by moving to the original position */
 }
 
 /* Bottom */
 .offcanva_mike.bottom {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 450px;
-    transform: translateY(100%);
+    bottom: 0;                  /* From the bottom */
+    left: 0;                    /* From the left */
+    width: 100%;                /* Full width */
+    height: 450px;              /* Specific height for offcanvas at the bottom */
+    transform: translateY(100%); /* Move out of view downwards */
 }
 
 .offcanva_mike.bottom.open {
-    transform: translateY(0);
+    transform: translateY(0);   /* Show by moving to the original position */
 }
 
 /* Styles for buttons and other elements */
 
 /* Open button */
 .open-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 10px 20px;         /* Inner padding */
+    font-size: 16px;            /* Font size */
+    cursor: pointer;            /* Pointer cursor */
 }
 
-/* Close button inside offcanvas */
+/* Close button inside the offcanvas */
 .offcanva_mike-close-btn {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #000;
-    padding: 8px 12px;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1002;
-    transition: background-color 0.3s ease;
+    display: flex;              /* Flexbox to center content */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+    color: #fff;                /* White text color */
+    text-decoration: none;      /* No text decoration */
+    font-size: 16px;            /* Font size */
+    cursor: pointer;            /* Pointer cursor */
+    background-color: #000;     /* Initial background color black */
+    width: 35px;                /* Button width */
+    height: 35px;               /* Button height */
+    border-radius: 50%;         /* Circle shape */
+    position: absolute;         /* Absolute positioning */
+    top: 15px;                  /* Distance from the top */
+    left: 15px;                 /* Distance from the left */
+    z-index: 1002;              /* Z-index layer above content */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
 .offcanva_mike-close-btn::before {
-    content: '×';
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
+    content: '×';               /* Content of the pseudo-element */
+    font-size: 20px;            /* Icon size */
+    font-weight: bold;          /* Icon weight */
+    color: #fff;                /* White text color */
 }
 
 .offcanva_mike-close-btn:hover {
-    background-color: #666666;
-    color: #fff;
+    background-color: #666666;  /* Color change on hover */
+    color: #fff;                /* White text color */
+}
+
+.offcanva_mike-img {
+    display: none;
+    width: 100%;                /* Full width to fit the offcanvas */
+    height: auto;               /* Automatic height to maintain ratio */
+    max-height: 70%;            /* Maximum height 70% of the offcanvas */
+    object-fit: cover;          /* Cover the available area maintaining ratio */
+    margin-top: 10px;           /* Top margin */
+    margin-bottom: 10px;        /* Bottom margin */
 }
