@@ -1,0 +1,129 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Main offcanvas container */
+.offcanva_mike-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+/* Base styles for offcanvas */
+.offcanva_mike {
+    position: fixed;
+    width: 450px;
+    height: 100%;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+/* Offcanvas content container */
+.offcanva_mike-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Additional styles if there's a title and text */
+.offcanva_mike.with-text {
+    height: auto;
+}
+
+/* Specific styles for each direction */
+
+/* Left */
+.offcanva_mike.left {
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.offcanva_mike.left.open {
+    transform: translateX(0);
+}
+
+/* Right */
+.offcanva_mike.right {
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.offcanva_mike.right.open {
+    transform: translateX(0);
+}
+
+/* Top */
+.offcanva_mike.top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    transform: translateY(-100%);
+}
+
+.offcanva_mike.top.open {
+    transform: translateY(0);
+}
+
+/* Bottom */
+.offcanva_mike.bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    transform: translateY(100%);
+}
+
+.offcanva_mike.bottom.open {
+    transform: translateY(0);
+}
+
+/* Styles for buttons and other elements */
+
+/* Open button */
+.open-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Close button inside offcanvas */
+.offcanva_mike-close-btn {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000;
+    padding: 8px 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1002;
+    transition: background-color 0.3s ease;
+}
+
+.offcanva_mike-close-btn::before {
+    content: '×';
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.offcanva_mike-close-btn:hover {
+    background-color: #666666;
+    color: #fff;
+}
