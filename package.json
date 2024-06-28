@@ -1,6 +1,6 @@
 {
   "name": "offcanva_mike",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A jQuery plugin for creating offcanvas menus in different directions.",
   "main": "js/offcanva_mike.js",
   "scripts": {
