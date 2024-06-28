@@ -12,14 +12,6 @@ To use **offcanva_mike**, follow these steps:
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    ```
 
-
-1. Incluye jQuery en tu proyecto:
-
-   ```html
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   ```
-
-
 2. Include the CSS and JS files of the plugin:
 
 
