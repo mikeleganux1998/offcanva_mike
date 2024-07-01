@@ -6,10 +6,10 @@
     $.fn.offcanva_mike = function(options) {
         // Default settings and custom options
         var settings = $.extend({
-            position: 'left', // Default offcanvas position
-            title: '',        // Offcanvas title (optional)
-            text: '',         // Offcanvas text (optional)
-            img: ''           // Offcanvas image URL (optional)
+            position: 'left', // Default position of the offcanvas
+            title: '',        // Title of the offcanvas (optional)
+            text: '',         // Text of the offcanvas (optional)
+            img: ''           // URL of the image of the offcanvas (optional)
         }, options);
 
         return this.each(function() {
@@ -22,11 +22,11 @@
             // Create offcanvas
             $this.addClass('offcanva_mike-container'); // Add class to the main container
             offcanvas = $('<div>', { class: 'offcanva_mike ' + settings.position }).appendTo($this); // Create and add offcanvas to the container
-            var $closeBtnWrapper = $('<div>', { class: 'offcanva_mike-close-btn-wrapper' }).appendTo(offcanvas); // Add wrapper for close button
-            $('<a>', { href: '#', class: 'offcanva_mike-close-btn', text: '' }).appendTo($closeBtnWrapper); // Add close button to the wrapper
+            var $closeBtnWrapper = $('<div>', { class: 'offcanva_mike-close-btn-wrapper' }).appendTo(offcanvas); // Add container for close button
+            $('<a>', { href: '#', class: 'offcanva_mike-close-btn', text: '' }).appendTo($closeBtnWrapper); // Add close button to the container
             $('<div>', { class: 'offcanva_mike-content' }).appendTo(offcanvas); // Add content container to the offcanvas
 
-            var $content = offcanvas.find('.offcanva_mike-content'); // Select the offcanvas content
+            var $content = offcanvas.find('.offcanva_mike-content'); // Select the content of the offcanvas
 
             // Add title if present
             if (settings.title) {
@@ -46,7 +46,7 @@
             // Update offcanvas position
             offcanvas.attr('class', 'offcanva_mike ' + settings.position);
 
-            // Show or hide image as necessary
+            // Show or hide image as needed
             var $img = $content.find('.offcanva_mike-img');
             if (settings.img) {
                 $img.show();
@@ -66,10 +66,10 @@
                 offcanvas.removeClass('open'); // Remove class to hide the offcanvas
             });
 
-            // Handler for the close button within the offcanvas
+            // Close button handler inside the offcanvas
             $closeBtnWrapper.find('.offcanva_mike-close-btn').click(function(event) {
                 event.preventDefault(); // Prevent default link behavior
-                $this.trigger('close'); // Trigger the offcanvas close event
+                $this.trigger('close'); // Trigger close event for offcanvas
             });
 
             // Prevent closing when clicking inside the offcanvas
@@ -79,7 +79,7 @@
 
             // Close the offcanvas when clicking outside of it
             $this.click(function() {
-                $this.trigger('close'); // Trigger the offcanvas close event
+                $this.trigger('close'); // Trigger close event for offcanvas
             });
         });
     };
